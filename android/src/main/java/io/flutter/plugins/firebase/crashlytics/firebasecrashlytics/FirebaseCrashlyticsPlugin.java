@@ -6,8 +6,8 @@ package io.flutter.plugins.firebase.crashlytics.firebasecrashlytics;
 
 import android.content.Context;
 import android.util.Log;
-import com.crashlytics.android.Crashlytics;
-import io.fabric.sdk.android.Fabric;
+//import com.crashlytics.android.Crashlytics;
+//import io.fabric.sdk.android.Fabric;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodCall;
@@ -43,9 +43,9 @@ public class FirebaseCrashlyticsPlugin implements FlutterPlugin, MethodCallHandl
         new MethodChannel(binaryMessenger, "plugins.flutter.io/firebase_crashlytics");
     channel.setMethodCallHandler(new FirebaseCrashlyticsPlugin());
 
-    if (!Fabric.isInitialized()) {
-      Fabric.with(context, new Crashlytics());
-    }
+//    if (!Fabric.isInitialized()) {
+//      Fabric.with(context, new Crashlytics());
+//    }
 
     return channel;
   }
@@ -109,7 +109,7 @@ public class FirebaseCrashlyticsPlugin implements FlutterPlugin, MethodCallHandl
       Crashlytics.logException(exception);
       result.success("Error reported to Crashlytics.");
     } else if (call.method.equals("Crashlytics#isDebuggable")) {
-      result.success(Fabric.isDebuggable());
+//      result.success(Fabric.isDebuggable());
     } else if (call.method.equals("Crashlytics#getVersion")) {
       result.success(Crashlytics.getInstance().getVersion());
     } else if (call.method.equals("Crashlytics#setUserEmail")) {

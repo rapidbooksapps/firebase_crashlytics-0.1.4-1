@@ -16,9 +16,9 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-            url 'https://maven.fabric.io/public'
-        }
+//        maven {
+//            url 'https://maven.fabric.io/public'
+//        }
     }
 }
 
@@ -37,8 +37,10 @@ android {
 }
 
 dependencies {
-    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
+//    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
     implementation 'com.google.firebase:firebase-common:16.1.0'
+//    classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
+    implementation 'com.google.firebase:firebase-crashlytics:18.0.0'
     implementation 'androidx.annotation:annotation:1.1.0'
 }
 
